@@ -85,6 +85,12 @@ noteForm.addEventListener("submit", (event) => {
     return;
   }
 
+  if (noteInput.value.length > 200) {
+    errorMessage.textContent =
+      "Notes must be 200 characters or fewer.";
+    return;
+  }
+
   addNote(text, category);
   noteInput.value = "";
   errorMessage.textContent = "";
