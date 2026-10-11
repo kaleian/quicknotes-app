@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="QuickNotes helps you organize personal, work, and study notes.">
+  <title>QuickNotes | Your Notes, Organized</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-content">
+      <h1>QuickNotes</h1>
+      <p>Your thoughts, organized in one place.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section-card" aria-labelledby="add-heading">
+      <h2 id="add-heading">Add a note</h2>
+
+      <form id="note-form">
+        <div class="form-group">
+          <label for="note-input">Note text</label>
+          <input
+            type="text"
+            id="note-input"
+            name="note"
+            placeholder="What would you like to remember?"
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="category-select">Category</label>
+          <select id="category-select" name="category">
+            <option value="personal">Personal</option>
+            <option value="work">Work</option>
+            <option value="study">Study</option>
+          </select>
+        </div>
+
+        <button type="submit" class="add-button">Add Note</button>
+      </form>
+
+      <p id="error-message" role="alert"></p>
+    </section>
+
+    <section class="section-card" aria-labelledby="notes-heading">
+      <h2 id="notes-heading">Your notes</h2>
+
+      <label for="search-input">Search notes</label>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search your notes..."
+        autocomplete="off"
+      >
+
+      <p id="note-count" aria-live="polite">You have no notes yet.</p>
+      <ul id="notes-list" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>&copy; 2026 QuickNotes. Keep your thoughts organized.</p>
+  </footer>
+</body>
+</html>
