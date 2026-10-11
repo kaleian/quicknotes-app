@@ -5,6 +5,8 @@ const categorySelect = document.getElementById("category-select");
 const searchInput = document.getElementById("search-input");
 const notesList = document.getElementById("notes-list");
 const noteCount = document.getElementById("note-count");
+const clearAllBtn = document.getElementById("clear-all-btn");
+
 const errorMessage = document.getElementById("error-message");
 
 const STORAGE_KEY = "quicknotes-app-notes";
@@ -178,3 +180,16 @@ searchInput.addEventListener("input", renderNotes);
 
 // Show saved notes when the page opens.
 renderNotes();
+
+clearAllBtn.addEventListener("click", () => {
+  if (notes.length === 0) {
+    return;
+  }
+
+  if (confirm("Delete all notes?")) {
+    notes = [];
+    saveNotes();
+    renderNotes();
+    errorMessage.textContent = "";
+  }
+});
